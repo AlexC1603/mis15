@@ -9,10 +9,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap');
 
         :root {
-            --gold: #bda054;
-            --gold-light: #d4c08b;
+            --gold: #c3a353; /* Tono dorado de tu imagen */
             --bg-color: #f4f7f8;
-            --text-dark: #000000; /* Negro absoluto para mayor contraste */
+            --text-dark: #000000;
             --text-muted: #666666;
             --font-title: 'Cinzel', serif;
             --font-text: 'Montserrat', sans-serif;
@@ -31,7 +30,7 @@
             overflow: hidden; 
         }
 
-        /* 🌟 PANTALLA DE ENTRADA 🌟 */
+        /* 🌟 PANTALLA DE ENTRADA CLÁSICA 🌟 */
         #entry-overlay {
             position: fixed;
             top: 0;
@@ -79,7 +78,7 @@
         .entry-btn:hover {
             background-color: var(--gold);
             color: #fff;
-            box-shadow: 0 5px 15px rgba(189, 160, 84, 0.3);
+            box-shadow: 0 5px 15px rgba(195, 163, 83, 0.3);
         }
 
         #main-content {
@@ -88,6 +87,7 @@
             transition: opacity 2s ease;
         }
 
+        /* Hero Image */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -107,7 +107,7 @@
             z-index: 1;
         }
 
-        /* Flecha Dorada de Desplazamiento */
+        /* Indicador de Desplazamiento */
         .scroll-arrow-container {
             margin-top: 40px;
             display: flex;
@@ -115,7 +115,6 @@
             align-items: center;
             animation: dreamy-bounce 2s infinite;
             cursor: pointer;
-            z-index: 2;
         }
 
         .gold-scroll-arrow {
@@ -132,28 +131,25 @@
             60% {transform: translateY(-4px);}
         }
 
-        /* 🌟 RELOJ / CUENTA REGRESIVA ESTILO NEGRO Y DORADO 🌟 */
+        /* 🌟 RELOJ / CUENTA REGRESIVA EXACTO A TU IMAGEN 🌟 */
         .countdown-section {
             padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255,255,255,0.8);
-            border-bottom: 1px solid rgba(255,255,255,0.8);
         }
 
         .countdown-title {
             font-family: var(--font-title);
             color: var(--gold);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 30px;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
         }
 
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            align-items: flex-start;
+            gap: 10px;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -162,30 +158,43 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 75px;
+            width: 70px;
         }
 
         .time-number {
-            font-family: var(--font-title);
-            font-size: 2.5rem;
-            color: #000000; /* Texto Negro */
-            background: #ffffff; /* Fondo blanco */
+            font-family: var(--font-text);
+            font-size: 2.2rem;
+            color: #000000;
+            background: #ffffff;
             width: 100%;
-            padding: 15px 0;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 10px;
-            border: 2px solid var(--gold); /* Borde Dorado */
+            border: 1px solid var(--gold); /* Borde dorado fino */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            margin-bottom: 12px;
         }
 
         .time-label {
             font-size: 0.75rem;
-            color: var(--text-dark); /* Label negro */
+            color: var(--text-dark);
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 500;
         }
 
+        .colon {
+            font-family: var(--font-text);
+            font-size: 2rem;
+            color: var(--gold);
+            height: 70px; /* Misma altura que la caja para centrar los puntos */
+            display: flex;
+            align-items: center;
+            padding-bottom: 2px;
+        }
+
+        /* Secciones Generales */
         .section {
             padding: 80px 20px;
             max-width: 800px;
@@ -226,23 +235,25 @@
             border: 4px solid #fff;
         }
 
+        /* 🌟 BOTONES DE ASISTENCIA EXACTOS A TU IMAGEN 🌟 */
         .rsvp-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
+            gap: 15px;
+            margin-top: 30px;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 15px 35px;
+            padding: 14px 28px;
             font-family: var(--font-text);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             border-radius: 4px;
             text-decoration: none;
             transition: all 0.3s;
+            font-weight: 500;
         }
 
         .btn-gold {
@@ -252,32 +263,30 @@
         }
 
         .btn-gold:hover {
-            background-color: #a68b46;
-            box-shadow: 0 5px 15px rgba(189, 160, 84, 0.3);
-            transform: translateY(-2px);
+            background-color: #ae8f45;
+            box-shadow: 0 4px 15px rgba(195, 163, 83, 0.3);
         }
 
         .btn-outline {
-            background-color: transparent;
+            background-color: #fafafa;
             color: var(--text-muted);
-            border: 1px solid #cccccc;
+            border: 1px solid #dcdcdc;
         }
 
         .btn-outline:hover {
-            border-color: var(--text-muted);
-            background-color: #f9f9f9;
-            transform: translateY(-2px);
+            border-color: #b0b0b0;
+            background-color: #f0f0f0;
         }
 
-        /* 🌟 CONTROL DE MÚSICA ESTILO NEGRO Y DORADO 🌟 */
+        /* 🌟 BOTÓN DE MÚSICA (BLANCO CON BORDE DORADO) 🌟 */
         #music-toggle {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 55px; /* Un poco más grande para destacar el círculo */
+            width: 55px;
             height: 55px;
             background: #ffffff;
-            border: 2px solid var(--gold); /* Borde dorado de 2px */
+            border: 2px solid var(--gold);
             border-radius: 50%;
             display: none;
             justify-content: center;
@@ -285,13 +294,13 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             z-index: 1000;
-            color: #000000; /* Ícono completamente negro */
-            transition: all 0.3s;
+            color: #333333; /* Color oscuro para el ícono */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         #music-toggle:hover {
-            transform: scale(1.08);
-            box-shadow: 0 6px 20px rgba(189, 160, 84, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(195, 163, 83, 0.4);
         }
     </style>
 </head>
@@ -327,14 +336,17 @@
                     <div class="time-number" id="days">00</div>
                     <div class="time-label">Días</div>
                 </div>
+                <div class="colon">:</div>
                 <div class="time-box">
                     <div class="time-number" id="hours">00</div>
                     <div class="time-label">Hrs</div>
                 </div>
+                <div class="colon">:</div>
                 <div class="time-box">
                     <div class="time-number" id="minutes">00</div>
                     <div class="time-label">Min</div>
                 </div>
+                <div class="colon">:</div>
                 <div class="time-box">
                     <div class="time-number" id="seconds">00</div>
                     <div class="time-label">Seg</div>
@@ -361,8 +373,8 @@
         </section>
 
         <section class="section reveal" style="padding-bottom: 120px;">
-            <h2>Asistencia</h2>
-            <p>Por favor, confirma tu presencia. Tu compañía es el mejor regalo.</p>
+            <h2 style="font-size: 4rem; margin-bottom: 10px;">Asistencia</h2>
+            <p style="margin-bottom: 30px;">Por favor, confirma tu presencia. Tu compañía es el mejor regalo.</p>
             
             <div class="rsvp-buttons">
                 <a href="#" class="btn btn-gold">Confirmar Asistencia</a>
@@ -372,10 +384,10 @@
     </div>
 
     <div id="music-toggle" onclick="toggleMute()">
-        <svg id="icon-unmuted" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <svg id="icon-unmuted" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none">
             <path d="M9 18c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3v-7l8-2v9c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3v-11l-11 2v11z"/>
         </svg>
-        <svg id="icon-muted" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <svg id="icon-muted" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
             <rect x="6" y="4" width="4" height="16" rx="1"/>
             <rect x="14" y="4" width="4" height="16" rx="1"/>
         </svg>
@@ -389,7 +401,9 @@
             music.play();
             const overlay = document.getElementById("entry-overlay");
             overlay.style.opacity = '0';
-            overlay.style.visibility = 'hidden';
+            setTimeout(() => {
+                overlay.style.visibility = 'hidden';
+            }, 1500);
             
             const content = document.getElementById("main-content");
             content.style.visibility = 'visible';
