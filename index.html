@@ -3,111 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cielo Jazmin - Mis 15 Años</title>
+    <title>Cielo Jazmin, mis 15 años - Una velada mágica</title>
     <style>
-        /* Tipografías Profesionales */
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap');
+        /* Estilos Globales de Ensueño 🌟 */
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&display=swap');
 
         :root {
-            --gold: #c3a353; /* Tono dorado de tu imagen */
-            --bg-color: #f4f7f8;
-            --text-dark: #000000;
-            --text-muted: #666666;
-            --font-title: 'Cinzel', serif;
-            --font-text: 'Montserrat', sans-serif;
-            --font-accent: 'Great Vibes', cursive;
+            --color-gold: #c3a353; /* Dorado mate elegante */
+            --color-ivory: #fdfdfa; /* Marfil suave */
+            --color-aqua-light: #e8f4f8; /* Agua marino clarito */
+            --color-white: #ffffff; /* Blanco puro */
+            --color-text-dark: #000000; /* Negro para mayor contraste */
+            --font-script: 'Great Vibes', cursive;
+            --font-serif: 'Cormorant Garamond', serif;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: var(--font-text);
-            background-color: var(--bg-color);
-            background-image: radial-gradient(circle at top right, #e8f0f2 0%, #f4f7f8 100%);
-            color: var(--text-dark);
+            font-family: var(--font-serif);
+            background-color: var(--color-white);
+            background-image: radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.2) 100%);
+            color: var(--color-text-dark);
             text-align: center;
             scroll-behavior: smooth;
-            overflow: hidden; 
+            overflow: hidden; /* Ocultar scroll inicial */
         }
 
-        /* 🌟 PANTALLA DE ENTRADA CLÁSICA 🌟 */
+        h1, h2, .asistencia-titulo {
+            font-family: var(--font-script);
+            color: var(--color-gold);
+            font-weight: normal;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 🌟 PANTALLA DE ENTRADA (Música Automática) 🌟 */
         #entry-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #ffffff;
-            z-index: 9999;
+            background-color: var(--color-white);
+            background-image: radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.3) 100%);
+            z-index: 2000;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            transition: opacity 1.5s ease-in-out;
         }
 
-        .entry-title {
-            font-family: var(--font-accent);
+        #entry-overlay h1 {
             font-size: 4.5rem;
-            color: var(--gold);
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
-        .entry-subtitle {
-            font-family: var(--font-title);
-            letter-spacing: 4px;
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 40px;
+        #entry-overlay p {
+            font-size: 1.6rem;
+            color: #777;
+            margin-bottom: 50px;
         }
 
-        .entry-btn {
-            padding: 15px 40px;
-            background-color: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            font-family: var(--font-text);
-            font-size: 0.9rem;
-            letter-spacing: 2px;
+        .dreamy-btn {
+            background: linear-gradient(135deg, var(--color-gold) 0%, #e0c56e 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 18px 35px;
+            font-size: 1.2rem;
+            font-family: var(--font-serif);
             text-transform: uppercase;
+            letter-spacing: 2px;
             cursor: pointer;
-            transition: all 0.4s ease;
-            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .entry-btn:hover {
-            background-color: var(--gold);
-            color: #fff;
-            box-shadow: 0 5px 15px rgba(195, 163, 83, 0.3);
+        .dreamy-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: all 0.6s ease;
         }
 
+        .dreamy-btn:hover:before {
+            left: 100%;
+        }
+
+        .dreamy-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Contenedor de la Invitación Principal */
         #main-content {
             opacity: 0;
             visibility: hidden;
             transition: opacity 2s ease;
         }
 
-        /* Hero Image */
+        /* Sección Hero con la Imagen y Cuenta Regresiva */
         .hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 40px;
             position: relative;
         }
 
         .hero img {
-            max-width: 100%;
+            max-width: 90%;
             max-height: 75vh;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            object-fit: contain;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            position: relative;
             z-index: 1;
         }
 
-        /* Indicador de Desplazamiento */
+        /* El Arrecife de Coral de Ensueño */
+        .reef-overlay-top {
+            position: absolute;
+            top: -5%;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23c3a353" fill-opacity="0.08" d="M0,192L48,197.3C96,203,192,213,288,197.3C384,181,480,139,576,133.3C672,128,768,160,864,176C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path><path fill="%23b2dfee" fill-opacity="0.03" d="M0,288L48,277.3C96,267,192,245,288,245.3C384,245,480,267,576,277.3C672,288,768,288,864,266.7C960,245,1056,203,1152,192C1248,181,1344,203,1392,213.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+            background-size: cover;
+            z-index: 0;
+        }
+
+        /* Cuenta Regresiva sutil */
+        .countdown {
+            margin: 30px 0;
+            font-size: 1.3rem;
+            color: #666;
+            letter-spacing: 2px;
+        }
+
+        /* Flecha Dorada de Desplazamiento */
         .scroll-arrow-container {
             margin-top: 40px;
             display: flex;
@@ -115,12 +162,13 @@
             align-items: center;
             animation: dreamy-bounce 2s infinite;
             cursor: pointer;
+            z-index: 2;
         }
 
         .gold-scroll-arrow {
             width: 45px;
             height: 45px;
-            color: var(--gold);
+            color: var(--color-gold);
             stroke-width: 1.2;
             opacity: 0.9;
         }
@@ -131,80 +179,21 @@
             60% {transform: translateY(-4px);}
         }
 
-        /* 🌟 RELOJ / CUENTA REGRESIVA EXACTO A TU IMAGEN 🌟 */
-        .countdown-section {
-            padding: 60px 20px;
-        }
-
-        .countdown-title {
-            font-family: var(--font-title);
-            color: var(--gold);
-            font-size: 1.6rem;
-            margin-bottom: 30px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
-        .countdown-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 10px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .time-box {
+        /* Secciones de Revelado */
+        .section {
+            padding: 100px 20px;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            width: 70px;
-        }
-
-        .time-number {
-            font-family: var(--font-text);
-            font-size: 2.2rem;
-            color: #000000;
-            background: #ffffff;
-            width: 100%;
-            height: 70px;
-            display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 8px;
-            border: 1px solid var(--gold); /* Borde dorado fino */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            margin-bottom: 12px;
-        }
-
-        .time-label {
-            font-size: 0.75rem;
-            color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .colon {
-            font-family: var(--font-text);
-            font-size: 2rem;
-            color: var(--gold);
-            height: 70px; /* Misma altura que la caja para centrar los puntos */
-            display: flex;
-            align-items: center;
-            padding-bottom: 2px;
-        }
-
-        /* Secciones Generales */
-        .section {
-            padding: 80px 20px;
-            max-width: 800px;
-            margin: 0 auto;
+            position: relative;
         }
 
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+            transform: translateY(60px);
+            transition: all 1.2s ease-out;
         }
 
         .reveal.active {
@@ -212,95 +201,143 @@
             transform: translateY(0);
         }
 
-        .section h2 {
-            font-family: var(--font-accent);
+        /* Palabras de Ensueño */
+        .message h2 {
             font-size: 3.5rem;
-            color: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .message p {
+            font-size: 1.3rem;
+            line-height: 2.1;
+            color: #666;
+            margin: 0 20px;
+            max-width: 900px;
+        }
+
+        /* Ubicación */
+        .location h2 {
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            font-weight: normal;
         }
 
-        .section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-            font-weight: 300;
+        .location-info p {
+            font-size: 1.4rem;
+            color: #555;
+            margin-bottom: 40px;
         }
 
-        .map-container {
-            border-radius: 12px;
+        .map-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-            margin-top: 40px;
-            border: 4px solid #fff;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            position: relative;
         }
 
-        /* 🌟 BOTONES DE ASISTENCIA EXACTOS A TU IMAGEN 🌟 */
-        .rsvp-buttons {
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* 🌟 SECCIÓN DE ASISTENCIA (Tonos Celestes y Dibujos de Cangrejos) 🌟 */
+        .asistencia-section {
+            padding: 100px 20px;
+            background-color: var(--color-aqua-light); /* Fondo Celeste Suave */
+            background-image: 
+                radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.3) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="5" y="50" font-size="20" fill="%23c3a353" fill-opacity="0.1">🦀</text><text x="80" y="80" font-size="15" fill="%23b2dfee" fill-opacity="0.15">🐚</text><text x="15" y="85" font-size="25" fill="%23c3a353" fill-opacity="0.12">🦀</text><text x="70" y="20" font-size="22" fill="%23c3a353" fill-opacity="0.1">🦀</text></svg>');
+            background-size: cover;
+            position: relative;
+        }
+
+        .asistencia-titulo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .asistencia-section p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 800px;
+        }
+
+        .confirm-btn-group {
             display: flex;
+            gap: 25px;
             justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
             flex-wrap: wrap;
         }
 
-        .btn {
-            padding: 14px 28px;
-            font-family: var(--font-text);
-            font-size: 0.85rem;
+        .confirm-btn {
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.06);
+            font-family: var(--font-serif);
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 500;
         }
 
-        .btn-gold {
-            background-color: var(--gold);
-            color: #ffffff;
-            border: 1px solid var(--gold);
+        /* Botón Confirmar (Dorado Sólido) */
+        .confirm-btn-yes {
+            background: linear-gradient(135deg, var(--color-gold) 0%, #e0c56e 100%);
+            color: white;
+            border: none;
         }
 
-        .btn-gold:hover {
-            background-color: #ae8f45;
-            box-shadow: 0 4px 15px rgba(195, 163, 83, 0.3);
+        .confirm-btn-yes:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .btn-outline {
-            background-color: #fafafa;
-            color: var(--text-muted);
-            border: 1px solid #dcdcdc;
+        /* Botón Declinar (Borde Dorado) */
+        .confirm-btn-no {
+            background-color: transparent;
+            color: var(--color-gold);
+            border: 2px solid var(--color-gold);
         }
 
-        .btn-outline:hover {
-            border-color: #b0b0b0;
-            background-color: #f0f0f0;
+        .confirm-btn-no:hover {
+            background-color: rgba(205, 164, 52, 0.05);
+            transform: translateY(-2px);
         }
 
-        /* 🌟 BOTÓN DE MÚSICA (BLANCO CON BORDE DORADO) 🌟 */
+        /* 🌟 CONTROL DE MÚSICA (CORREGIDO: Negro y Círculo Blanco) 🌟 */
         #music-toggle {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 55px;
-            height: 55px;
-            background: #ffffff;
-            border: 2px solid var(--gold);
+            bottom: 25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-white); /* Círculo Blanco Puro */
+            border: 2px solid var(--color-gold); /* Borde dorado nítido */
             border-radius: 50%;
-            display: none;
+            display: none; /* Ocultar hasta entrar */
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             z-index: 1000;
-            color: #333333; /* Color oscuro para el ícono */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            color: var(--color-text-dark); /* Color negro sólido para el ícono */
+            transition: all 0.3s ease;
         }
         
         #music-toggle:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(195, 163, 83, 0.4);
+            transform: scale(1.08);
+            box-shadow: 0 6px 15px rgba(189, 160, 84, 0.3);
+        }
+
+        /* Íconos SVGs Correctos */
+        .music-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor; /* Usa el color negro del contenedor */
         }
     </style>
 </head>
@@ -308,18 +345,25 @@
 
     <audio id="bg-music" loop>
         <source src="Waiting%20For%20Love.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
     </audio>
 
     <div id="entry-overlay">
-        <div class="entry-title">Cielo Jazmin</div>
-        <div class="entry-subtitle">MIS 15 AÑOS</div>
-        <button class="entry-btn" onclick="startInvitation()">Ingresar a la invitación</button>
+        <h1>Cielo Jazmin</h1>
+        <p>Una velada mágica te espera</p>
+        <button class="dreamy-btn" onclick="enterExperience()">Descubrir la Magia</button>
     </div>
 
     <div id="main-content">
+        
         <section class="hero">
+            <div class="reef-overlay-top"></div>
             <img src="invitacion.jpg" alt="Invitación Cielo Jazmin">
             
+            <div class="countdown">
+                Días Hrs Min Seg
+            </div>
+
             <div class="scroll-arrow-container">
                 <svg xmlns="http://www.w3.org/2000/svg" class="gold-scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
@@ -329,65 +373,41 @@
             </div>
         </section>
 
-        <section class="countdown-section reveal">
-            <div class="countdown-title">Faltan</div>
-            <div class="countdown-container">
-                <div class="time-box">
-                    <div class="time-number" id="days">00</div>
-                    <div class="time-label">Días</div>
-                </div>
-                <div class="colon">:</div>
-                <div class="time-box">
-                    <div class="time-number" id="hours">00</div>
-                    <div class="time-label">Hrs</div>
-                </div>
-                <div class="colon">:</div>
-                <div class="time-box">
-                    <div class="time-number" id="minutes">00</div>
-                    <div class="time-label">Min</div>
-                </div>
-                <div class="colon">:</div>
-                <div class="time-box">
-                    <div class="time-number" id="seconds">00</div>
-                    <div class="time-label">Seg</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h2>Un momento inolvidable</h2>
+        <section class="section message reveal">
+            <h2>Cada momento es un regalo</h2>
             <p>
-                Hay días que soñamos desde que tenemos memoria, y compartirlos con las personas que dan luz a nuestra vida los convierte en recuerdos eternos.<br><br>
-                Acompáñame a celebrar la magia de mis 15 años en una velada llena de amor, risas y buena música bajo las estrellas.
+                Hoy, con el corazón lleno de ilusiones y la alegría de mis 15 años, quiero invitarte a compartir una velada que será pura magia.<br><br>
+                Prepárate para una noche inolvidable, donde el mar y las estrellas serán testigos de un sueño hecho realidad. Te espero para celebrar juntos.
             </p>
         </section>
 
-        <section class="section reveal">
-            <h2>¿Dónde nos vemos?</h2>
-            <p style="margin-bottom: 5px;"><strong>Lugar:</strong> Villa mar, Ancón, 1ra C. Sullana</p>
-            <p style="margin-top: 0;"><strong>Fecha y Hora:</strong> Sábado 21 de Marzo de 2026, 2:00 pm</p>
+        <section class="section location reveal">
+            <h2>La Magia Está Cerca</h2>
+            <div class="location-info">
+                <p><strong>Lugar:</strong> Villa mar, Ancón, 1ra C. Sullana</p>
+            </div>
             
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31534.62534563841!2d-77.19532506456075!3d-11.758872580796853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91054a37b1968843%3A0x6d9532822ff25b18!2sAncon%20District!5e0!3m2!1sen!2spe!4v1659711684725!5m2!1sen!2spe" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31534.62534563841!2d-77.19532506456075!3d-11.758872580796853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91054a37b1968843%3A0x6d9532822ff25b18!2sAncon%20District!5e0!3m2!1sen!2spe!4v1659711684725!5m2!1sen!2spe" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
 
-        <section class="section reveal" style="padding-bottom: 120px;">
-            <h2 style="font-size: 4rem; margin-bottom: 10px;">Asistencia</h2>
-            <p style="margin-bottom: 30px;">Por favor, confirma tu presencia. Tu compañía es el mejor regalo.</p>
+        <section class="asistencia-section reveal">
+            <h2 class="asistencia-titulo">Confirmación</h2>
+            <p>Por favor, confirma tu presencia. Tu compañía es el mejor regalo.</p>
             
-            <div class="rsvp-buttons">
-                <a href="#" class="btn btn-gold">Confirmar Asistencia</a>
-                <a href="#" class="btn btn-outline">Declinar con pesar</a>
+            <div class="confirm-btn-group">
+                <a href="#" class="confirm-btn confirm-btn-yes">¡Allí estaré!</a>
+                <a href="#" class="confirm-btn confirm-btn-no">No podré asistir</a>
             </div>
         </section>
     </div>
 
-    <div id="music-toggle" onclick="toggleMute()">
-        <svg id="icon-unmuted" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <div id="music-toggle" onclick="toggleMusic()">
+        <svg id="icon-unmuted" class="music-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M9 18c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3v-7l8-2v9c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3v-11l-11 2v11z"/>
         </svg>
-        <svg id="icon-muted" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <svg id="icon-muted" class="music-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <rect x="6" y="4" width="4" height="16" rx="1"/>
             <rect x="14" y="4" width="4" height="16" rx="1"/>
         </svg>
@@ -396,70 +416,74 @@
     <script>
         const music = document.getElementById("bg-music");
         music.volume = 0.2; 
+        let isPlaying = false;
+        const musicToggle = document.getElementById("music-toggle");
 
-        function startInvitation() {
+        // FUNCIÓN PARA ENTRAR
+        function enterExperience() {
             music.play();
-            const overlay = document.getElementById("entry-overlay");
-            overlay.style.opacity = '0';
+            isPlaying = true;
+            document.getElementById("entry-overlay").style.opacity = '0';
             setTimeout(() => {
-                overlay.style.visibility = 'hidden';
+                document.getElementById("entry-overlay").style.display = 'none';
+                document.getElementById("main-content").style.visibility = 'visible';
+                document.getElementById("main-content").style.opacity = '1';
+                document.body.style.overflow = 'auto';
+                musicToggle.style.display = 'flex';
+                updateCountdown();
+                reveal();
             }, 1500);
-            
-            const content = document.getElementById("main-content");
-            content.style.visibility = 'visible';
-            content.style.opacity = '1';
-            
-            document.body.style.overflow = 'auto';
-            document.getElementById("music-toggle").style.display = 'flex';
-            reveal();
         }
 
-        function toggleMute() {
+        // Función control de música
+        function toggleMusic() {
             const iconUnmuted = document.getElementById("icon-unmuted");
             const iconMuted = document.getElementById("icon-muted");
             
-            if (music.muted) {
-                music.muted = false;
-                iconUnmuted.style.display = "block";
-                iconMuted.style.display = "none";
-            } else {
-                music.muted = true;
+            if (isPlaying) {
+                music.pause();
                 iconUnmuted.style.display = "none";
                 iconMuted.style.display = "block";
+            } else {
+                music.play();
+                iconUnmuted.style.display = "block";
+                iconMuted.style.display = "none";
             }
+            isPlaying = !isPlaying;
         }
 
+        // LÓGICA DE LA CUENTA REGRESIVA
+        // Fecha del evento: 21 de Marzo de 2026
         const eventDate = new Date("March 21, 2026 14:00:00").getTime();
 
-        const timer = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = eventDate - now;
+        function updateCountdown() {
+            const countdownEl = document.querySelector('.countdown');
+            const timer = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
 
-            if (distance < 0) {
-                clearInterval(timer);
-                document.querySelector(".countdown-title").innerText = "¡El gran día ha llegado!";
-                document.querySelector(".countdown-container").style.display = "none";
-                return;
-            }
+                if (distance < 0) {
+                    clearInterval(timer);
+                    countdownEl.innerText = "¡El gran día ha llegado!";
+                    return;
+                }
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
-        }, 1000);
+                countdownEl.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }, 1000);
+        }
 
+        // Efecto reveal al bajar
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
                 var elementVisible = 100;
-                
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
@@ -469,5 +493,6 @@
     </script>
 </body>
 </html>
+
 
 
