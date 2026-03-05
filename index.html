@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cielo Jazmin, mis 15 años - Una velada mágica</title>
     <style>
-        /* Estilos Globales de Ensueño */
+        /* Estilos Globales de Ensueño 🌟 */
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&display=swap');
 
         :root {
-            --color-gold: #cda434;
-            --color-ivory: #fdfdfa;
-            --color-aqua-light: #e8f4f8;
-            --color-aqua-deep: #b2dfee; /* Un azul más profundo para efecto de agua */
-            --color-text: #444;
+            --color-gold: #cda434; /* Dorado elegante */
+            --color-ivory: #fdfdfa; /* Marfil suave */
+            --color-aqua-light: #e8f4f8; /* Agua marino clarito */
+            --color-aqua-deep: #b2dfee; /* Azul agua más profundo */
+            --color-text: #444; /* Texto gris oscuro suave */
             --font-script: 'Great Vibes', cursive;
             --font-serif: 'Cormorant Garamond', serif;
         }
@@ -48,11 +48,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.4) 70%);
+            background: radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.3) 80%);
             z-index: -2;
         }
 
-        /* 🌟 PANTALLA DE ENTRADA (Pre-loader/Interacción) 🌟 */
+        /* 🌟 PANTALLA DE ENTRADA (Música Automática) 🌟 */
         #entry-overlay {
             position: fixed;
             top: 0;
@@ -60,24 +60,24 @@
             width: 100%;
             height: 100%;
             background-color: var(--color-ivory);
-            background-image: radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.6) 100%);
+            background-image: radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.5) 100%);
             z-index: 2000;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: opacity 1.5s ease;
+            transition: opacity 1.5s ease-in-out;
         }
 
         #entry-overlay h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 20px;
         }
 
         #entry-overlay p {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #777;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .dreamy-btn {
@@ -121,7 +121,7 @@
         #main-content {
             opacity: 0;
             visibility: hidden;
-            transition: opacity 1.5s ease;
+            transition: opacity 2s ease;
         }
 
         /* Sección Hero con la Imagen */
@@ -151,31 +151,35 @@
             left: 0;
             width: 100%;
             height: 300px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23cda434" fill-opacity="0.1" d="M0,192L48,197.3C96,203,192,213,288,197.3C384,181,480,139,576,133.3C672,128,768,160,864,176C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path><path fill="%23b2dfee" fill-opacity="0.05" d="M0,288L48,277.3C96,267,192,245,288,245.3C384,245,480,267,576,277.3C672,288,768,288,864,266.7C960,245,1056,203,1152,192C1248,181,1344,203,1392,213.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23cda434" fill-opacity="0.08" d="M0,192L48,197.3C96,203,192,213,288,197.3C384,181,480,139,576,133.3C672,128,768,160,864,176C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path><path fill="%23b2dfee" fill-opacity="0.03" d="M0,288L48,277.3C96,267,192,245,288,245.3C384,245,480,267,576,277.3C672,288,768,288,864,266.7C960,245,1056,203,1152,192C1248,181,1344,203,1392,213.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
             background-size: cover;
             z-index: 0;
         }
 
-        /* Sección de Desplazamiento 👇 */
-        .scroll-down {
-            margin-top: 30px;
-            color: #999;
-            font-size: 1rem;
+        /* 🌟 Nuevo Icono de Desplazamiento Minimalista 🌟 */
+        .scroll-arrow-container {
+            margin-top: 40px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            animation: bounce 1.5s infinite;
+            align-items: center;
+            animation: dreamy-bounce 2s infinite; /* Rebote suave y lento */
+            cursor: pointer;
+            z-index: 2;
+            position: relative;
         }
 
-        .scroll-down span {
-            font-size: 1.5rem;
-            margin-left: 10px;
+        .gold-scroll-arrow {
+            width: 50px;
+            height: 50px;
+            color: var(--color-gold);
+            stroke-width: 1.5; /* Trazo más fino para elegancia */
+            opacity: 0.8;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
+        @keyframes dreamy-bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) scale(1);}
+            40% {transform: translateY(-8px) scale(1.02);}
+            60% {transform: translateY(-4px) scale(1.01);}
         }
 
         /* Secciones de Revelado */
@@ -206,8 +210,8 @@
             max-width: 900px;
             margin: 0 auto;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-            background-image: radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.2) 100%);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            background-image: radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.1) 100%);
         }
 
         .message h2 {
@@ -222,7 +226,7 @@
             margin: 0 20px;
         }
 
-        /* Ubicación de Ensueño 👇 */
+        /* Ubicación de Ensueño */
         .location {
             background-color: var(--color-aqua-light);
             background-image: radial-gradient(circle at center, var(--color-aqua-light) 0%, #b2dfee33 100%);
@@ -244,7 +248,7 @@
             margin: 0 auto;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
             position: relative;
         }
 
@@ -257,7 +261,7 @@
         /* 🌟 SECCIÓN DE CONFIRMACIÓN 🌟 */
         .confirmation {
             background-color: var(--color-ivory);
-            background-image: radial-gradient(circle at center, var(--color-ivory) 0%, #b2dfee22 100%);
+            background-image: radial-gradient(circle at center, var(--color-ivory) 0%, #b2dfee11 100%);
         }
 
         .confirmation h2 {
@@ -284,7 +288,7 @@
             border-radius: 50px;
             transition: all 0.3s ease;
             cursor: pointer;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.06);
             font-family: var(--font-serif);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -299,10 +303,10 @@
 
         .confirm-btn-yes:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* Botón Declinar (Azul Agua Suave) */
+        /* Botón Declinar (Borde Dorado) */
         .confirm-btn-no {
             background-color: transparent;
             color: var(--color-gold);
@@ -314,7 +318,7 @@
             transform: translateY(-2px);
         }
 
-        /* El Cangrejo de Ensueño 👇 */
+        /* El Cangrejo de Ensueño sutil */
         .crab-overlay {
             position: absolute;
             bottom: -50px;
@@ -327,20 +331,21 @@
         /* Control de Música Sutil */
         #music-control {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(253, 253, 250, 0.8);
+            bottom: 25px;
+            right: 25px;
+            background: rgba(253, 253, 250, 0.85);
             color: var(--color-gold);
-            border: 2px solid var(--color-gold);
+            border: 1px solid var(--color-gold);
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             display: none; /* Ocultar hasta entrar */
             justify-content: center;
             align-items: center;
             cursor: pointer;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            font-size: 1.1rem;
         }
     </style>
 </head>
@@ -364,8 +369,12 @@
             <div class="reef-overlay-top"></div>
             <img src="invitacion.jpg" alt="Invitación de 15 Años Cielo Jazmin, de Ensueño">
             
-            <div class="scroll-down">
-                Desliza hacia abajo 👇
+            <div class="scroll-arrow-container">
+                <svg xmlns="http://www.w3.org/2000/svg" class="gold-scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="8 12 12 16 16 12"></polyline>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                </svg>
             </div>
         </section>
 
@@ -414,29 +423,28 @@
         var isPlaying = false;
         var musicControl = document.getElementById("music-control");
 
-        // 🌟 FUNCIÓN PARA ENTRAR Y ACTIVAR LA MAGIA 🌟
+        // FUNCIÓN PARA ENTRAR
         function enterExperience() {
-            // Reproducir música (esto es aceptado por navegadores móviles tras un clic)
             music.play();
             isPlaying = true;
 
-            // Ocultar pantalla de entrada
+            // Ocultar overlay
             document.getElementById("entry-overlay").style.opacity = '0';
             setTimeout(function() {
                 document.getElementById("entry-overlay").style.display = 'none';
-                // Mostrar contenido principal con fundido
+                // Mostrar contenido principal
                 document.getElementById("main-content").style.visibility = 'visible';
                 document.getElementById("main-content").style.opacity = '1';
                 // Habilitar scroll
                 document.body.style.overflow = 'auto';
-                // Mostrar control de música sutil
+                // Mostrar control de música
                 musicControl.style.display = 'flex';
-                // Iniciar observador de desplazamiento
+                // Iniciar observador
                 reveal();
             }, 1500);
         }
 
-        // Función para el control de música sutil
+        // Función para el control de música
         function toggleMusic() {
             if (isPlaying) {
                 music.pause();
@@ -448,7 +456,7 @@
             isPlaying = !isPlaying;
         }
 
-        // Efecto para que los elementos aparezcan al bajar
+        // Efecto reveal al bajar
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -461,7 +469,6 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        //reveal(); // No chequear al cargar la página, esperar a entrar
     </script>
 </body>
 </html>
