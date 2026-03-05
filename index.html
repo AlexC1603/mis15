@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Cielo Jazmin</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f9f9; /* Tono agua muy suave */
+            color: #333;
+            text-align: center;
+        }
+
+        h1, h2 {
+            font-family: 'Great Vibes', cursive;
+            color: #cda434; /* Tono dorado */
+            font-weight: normal;
+        }
+
+        /* Botón de música flotante */
+        #music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #cda434;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 20px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1000;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Sección de la Invitación */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            max-height: 80vh;
+        }
+
+        /* Sección de Palabras/Mensaje */
+        .message {
+            padding: 80px 20px;
+            background-color: #ffffff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .message h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .message p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Sección de Ubicación */
+        .location {
+            padding: 80px 20px;
+            background-color: #e8f4f8; /* Azul marino clarito */
+        }
+
+        .location h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .location p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .map-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* Animaciones al hacer scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-in-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="perfect.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <button id="music-btn" onclick="toggleMusic()">🎵 Reproducir Música</button>
+
+    <section class="hero">
+        <img src="invitacion.jpg" alt="Invitación de 15 Años Cielo Jazmin">
+        <p style="margin-top: 20px; color: #888; font-size: 0.9rem;">Desliza hacia abajo 👇</p>
+    </section>
+
+    <section class="message reveal">
+        <h2>Celebra conmigo</h2>
+        <p>
+            Hay momentos en la vida que son especiales por sí solos, pero compartirlos con las personas que más quiero los hace inolvidables.<br><br>
+            Con mucha ilusión y alegría, quiero invitarte a celebrar la magia de mis 15 años. Prepárate para una noche llena de sonrisas, buena música y recuerdos hermosos junto al mar.
+        </p>
+    </section>
+
+    <section class="location reveal">
+        <h2>¿Dónde nos vemos?</h2>
+        <p><strong>Lugar:</strong> Villa mar, Ancón, 1ra C. Sullana<br><strong>Estilo:</strong> Formal</p>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31268.049405051934!2d-77.1853612!3d-11.7744315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d43ca64987f7%3A0xc3c9fdb86df3db01!2zQW5jw7Nu!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <script>
+        // Función para reproducir/pausar la música
+        var music = document.getElementById("bg-music");
+        var btn = document.getElementById("music-btn");
+        var isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+                btn.innerHTML = "🎵 Reproducir Música";
+            } else {
+                music.play();
+                btn.innerHTML = "⏸️ Pausar Música";
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Efecto para que los elementos aparezcan al bajar
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Para chequear al cargar la página
+    </script>
+</body>
+</html>
