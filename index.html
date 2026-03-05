@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cielo Jazmin, mis 15 años - Una velada mágica</title>
     <style>
-        /* Estilos Globales de Ensueño 🌟 */
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&display=swap');
+        /* Estilos Globales */
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap');
 
         :root {
-            --color-gold: #c3a353; /* Dorado mate elegante */
-            --color-ivory: #fdfdfa; /* Marfil suave */
-            --color-aqua-light: #e8f4f8; /* Agua marino clarito */
-            --color-white: #ffffff; /* Blanco puro */
-            --color-text-dark: #000000; /* Negro para mayor contraste */
+            --color-gold: #c6a655; /* El tono dorado exacto de tus capturas */
+            --color-ivory: #fdfdfa;
+            --color-aqua-light: #e8f4f8; /* Tono celeste de la última captura */
+            --color-white: #ffffff;
+            --color-text-dark: #333333;
             --font-script: 'Great Vibes', cursive;
-            --font-serif: 'Cormorant Garamond', serif;
+            --font-text: 'Montserrat', sans-serif;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: var(--font-serif);
+            font-family: var(--font-text);
             background-color: var(--color-white);
             background-image: radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.2) 100%);
             color: var(--color-text-dark);
             text-align: center;
             scroll-behavior: smooth;
-            overflow: hidden; /* Ocultar scroll inicial */
+            overflow: hidden; 
         }
 
         h1, h2, .asistencia-titulo {
@@ -42,7 +42,7 @@
             color: inherit;
         }
 
-        /* 🌟 PANTALLA DE ENTRADA (Música Automática) 🌟 */
+        /* 🌟 PANTALLA DE ENTRADA 🌟 */
         #entry-overlay {
             position: fixed;
             top: 0;
@@ -50,7 +50,6 @@
             width: 100%;
             height: 100%;
             background-color: var(--color-white);
-            background-image: radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.3) 100%);
             z-index: 2000;
             display: flex;
             flex-direction: column;
@@ -65,92 +64,107 @@
         }
 
         #entry-overlay p {
-            font-size: 1.6rem;
+            font-family: var(--font-text);
+            letter-spacing: 4px;
+            font-size: 1rem;
             color: #777;
             margin-bottom: 50px;
         }
 
         .dreamy-btn {
-            background: linear-gradient(135deg, var(--color-gold) 0%, #e0c56e 100%);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 18px 35px;
-            font-size: 1.2rem;
-            font-family: var(--font-serif);
+            background-color: transparent;
+            color: var(--color-gold);
+            border: 1px solid var(--color-gold);
+            border-radius: 4px;
+            padding: 15px 40px;
+            font-size: 1rem;
+            font-family: var(--font-text);
             text-transform: uppercase;
             letter-spacing: 2px;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .dreamy-btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: all 0.6s ease;
-        }
-
-        .dreamy-btn:hover:before {
-            left: 100%;
         }
 
         .dreamy-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+            background-color: var(--color-gold);
+            color: white;
+            box-shadow: 0 5px 15px rgba(198, 166, 85, 0.3);
         }
 
-        /* Contenedor de la Invitación Principal */
         #main-content {
             opacity: 0;
             visibility: hidden;
             transition: opacity 2s ease;
         }
 
-        /* Sección Hero con la Imagen y Cuenta Regresiva */
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px;
+            padding: 40px 20px;
             position: relative;
         }
 
         .hero img {
             max-width: 90%;
-            max-height: 75vh;
-            border-radius: 20px;
+            max-height: 70vh;
+            border-radius: 15px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.08);
             position: relative;
             z-index: 1;
         }
 
-        /* El Arrecife de Coral de Ensueño */
-        .reef-overlay-top {
-            position: absolute;
-            top: -5%;
-            left: 0;
-            width: 100%;
-            height: 300px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23c3a353" fill-opacity="0.08" d="M0,192L48,197.3C96,203,192,213,288,197.3C384,181,480,139,576,133.3C672,128,768,160,864,176C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path><path fill="%23b2dfee" fill-opacity="0.03" d="M0,288L48,277.3C96,267,192,245,288,245.3C384,245,480,267,576,277.3C672,288,768,288,864,266.7C960,245,1056,203,1152,192C1248,181,1344,203,1392,213.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
-            background-size: cover;
-            z-index: 0;
+        /* 🌟 RELOJ EXACTO A TU IMAGEN 🌟 */
+        .countdown-wrapper {
+            margin-top: 30px;
         }
 
-        /* Cuenta Regresiva sutil */
-        .countdown {
-            margin: 30px 0;
-            font-size: 1.3rem;
-            color: #666;
+        .countdown-title {
+            font-family: var(--font-text);
+            color: var(--color-gold);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px; /* Separación entre cajas sin puntos */
+            margin: 0 auto;
+        }
+
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px; /* Separación entre el número y la letra */
+        }
+
+        .time-number {
+            font-family: 'Times New Roman', serif; /* Para que el número se vea clásico como en tu foto */
+            font-size: 2.2rem;
+            color: #000000;
+            background: #ffffff;
+            width: 75px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+            border: 1px solid var(--color-gold); /* Borde dorado fino */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        .time-label {
+            font-family: var(--font-text);
+            font-size: 0.75rem;
+            color: #000000;
+            text-transform: uppercase;
             letter-spacing: 2px;
         }
 
@@ -166,11 +180,10 @@
         }
 
         .gold-scroll-arrow {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             color: var(--color-gold);
             stroke-width: 1.2;
-            opacity: 0.9;
         }
 
         @keyframes dreamy-bounce {
@@ -179,10 +192,10 @@
             60% {transform: translateY(-4px);}
         }
 
-        /* Secciones de Revelado */
+        /* Secciones */
         .section {
-            padding: 100px 20px;
-            min-height: 80vh;
+            padding: 80px 20px;
+            min-height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -192,8 +205,8 @@
 
         .reveal {
             opacity: 0;
-            transform: translateY(60px);
-            transition: all 1.2s ease-out;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
         }
 
         .reveal.active {
@@ -201,143 +214,150 @@
             transform: translateY(0);
         }
 
-        /* Palabras de Ensueño */
-        .message h2 {
-            font-size: 3.5rem;
-            margin-bottom: 30px;
-        }
-
-        .message p {
-            font-size: 1.3rem;
-            line-height: 2.1;
-            color: #666;
-            margin: 0 20px;
-            max-width: 900px;
-        }
-
-        /* Ubicación */
-        .location h2 {
+        .message h2, .location h2 {
             font-size: 3.5rem;
             margin-bottom: 20px;
         }
 
-        .location-info p {
-            font-size: 1.4rem;
+        .message p, .location-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
             color: #555;
-            margin-bottom: 40px;
+            max-width: 800px;
         }
 
         .map-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            margin-top: 20px;
         }
 
         iframe {
             width: 100%;
-            height: 450px;
+            height: 350px;
             border: none;
         }
 
-        /* 🌟 SECCIÓN DE ASISTENCIA (Tonos Celestes y Dibujos de Cangrejos) 🌟 */
+        /* 🌟 SECCIÓN DE ASISTENCIA Y CANGREJO (Fondo Celeste) 🌟 */
         .asistencia-section {
-            padding: 100px 20px;
-            background-color: var(--color-aqua-light); /* Fondo Celeste Suave */
-            background-image: 
-                radial-gradient(circle at center, rgba(253, 253, 250, 0.9) 0%, rgba(178, 223, 238, 0.3) 100%),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="5" y="50" font-size="20" fill="%23c3a353" fill-opacity="0.1">🦀</text><text x="80" y="80" font-size="15" fill="%23b2dfee" fill-opacity="0.15">🐚</text><text x="15" y="85" font-size="25" fill="%23c3a353" fill-opacity="0.12">🦀</text><text x="70" y="20" font-size="22" fill="%23c3a353" fill-opacity="0.1">🦀</text></svg>');
-            background-size: cover;
+            padding: 120px 20px;
+            background: linear-gradient(to right, #eaf5f9, #dcf1f8); /* Fondo celeste degradado */
             position: relative;
+            overflow: hidden; /* Para que el cangrejo no se salga de la pantalla */
+            min-height: 400px;
         }
 
         .asistencia-titulo {
-            font-size: 4rem;
-            margin-bottom: 20px;
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
         }
 
         .asistencia-section p {
-            font-size: 1.3rem;
-            color: #666;
-            margin-bottom: 50px;
-            max-width: 800px;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
         }
 
         .confirm-btn-group {
             display: flex;
-            gap: 25px;
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
         }
 
+        /* Botones de Confirmación calcados de tu imagen */
         .confirm-btn {
-            padding: 18px 40px;
-            font-size: 1.2rem;
-            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 0.85rem;
+            border-radius: 4px;
             transition: all 0.3s ease;
             cursor: pointer;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.06);
-            font-family: var(--font-serif);
+            font-family: var(--font-text);
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 500;
         }
 
-        /* Botón Confirmar (Dorado Sólido) */
+        /* Botón Dorado (¡ALLÍ ESTARÉ!) */
         .confirm-btn-yes {
-            background: linear-gradient(135deg, var(--color-gold) 0%, #e0c56e 100%);
+            background-color: #cda857; /* Dorado lleno */
             color: white;
             border: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .confirm-btn-yes:hover {
+            background-color: #b89346;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* Botón Declinar (Borde Dorado) */
+        /* Botón Blanco/Transparente (DECLINAR) */
         .confirm-btn-no {
-            background-color: transparent;
-            color: var(--color-gold);
-            border: 2px solid var(--color-gold);
+            background-color: #fcfcfc;
+            color: #777;
+            border: 1px solid #ccc;
         }
 
         .confirm-btn-no:hover {
-            background-color: rgba(205, 164, 52, 0.05);
-            transform: translateY(-2px);
+            background-color: #f0f0f0;
+            border-color: #999;
+            color: #555;
         }
 
-        /* 🌟 CONTROL DE MÚSICA (CORREGIDO: Negro y Círculo Blanco) 🌟 */
+        /* 🦀 EL CANGREJO DE MARCA DE AGUA (Lado Derecho) 🦀 */
+        .crab-watermark {
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 350px;
+            opacity: 0.15; /* Sutil y transparente */
+            pointer-events: none; /* Para que no estorbe al hacer clic */
+            z-index: 1;
+        }
+
+        /* 🌟 CONTROL DE MÚSICA PERFECTO 🌟 */
         #music-toggle {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--color-white); /* Círculo Blanco Puro */
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            background-color: var(--color-white); /* Círculo Blanco */
             border: 2px solid var(--color-gold); /* Borde dorado nítido */
             border-radius: 50%;
-            display: none; /* Ocultar hasta entrar */
+            display: none; 
             justify-content: center;
             align-items: center;
             cursor: pointer;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            color: var(--color-text-dark); /* Color negro sólido para el ícono */
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
         
         #music-toggle:hover {
-            transform: scale(1.08);
-            box-shadow: 0 6px 15px rgba(189, 160, 84, 0.3);
+            transform: scale(1.05);
         }
 
-        /* Íconos SVGs Correctos */
-        .music-icon {
-            width: 20px;
-            height: 20px;
-            fill: currentColor; /* Usa el color negro del contenedor */
+        /* Los SVGs de la música con sus colores exactos */
+        .music-note-icon {
+            width: 26px;
+            height: 26px;
+            fill: #60668f; /* El color morado/azulado de la nota musical */
+        }
+
+        .pause-box-icon {
+            width: 26px;
+            height: 26px;
         }
     </style>
 </head>
@@ -345,23 +365,39 @@
 
     <audio id="bg-music" loop>
         <source src="Waiting%20For%20Love.mp3" type="audio/mpeg">
-        Tu navegador no soporta el audio.
     </audio>
 
     <div id="entry-overlay">
         <h1>Cielo Jazmin</h1>
-        <p>Una velada mágica te espera</p>
-        <button class="dreamy-btn" onclick="enterExperience()">Descubrir la Magia</button>
+        <p>MIS 15 AÑOS</p>
+        <button class="dreamy-btn" onclick="enterExperience()">Ingresar a la invitación</button>
     </div>
 
     <div id="main-content">
         
         <section class="hero">
-            <div class="reef-overlay-top"></div>
             <img src="invitacion.jpg" alt="Invitación Cielo Jazmin">
             
-            <div class="countdown">
-                Días Hrs Min Seg
+            <div class="countdown-wrapper">
+                <div class="countdown-title">Faltan</div>
+                <div class="countdown-container">
+                    <div class="time-box">
+                        <div class="time-number" id="days">00</div>
+                        <div class="time-label">Días</div>
+                    </div>
+                    <div class="time-box">
+                        <div class="time-number" id="hours">00</div>
+                        <div class="time-label">Hrs</div>
+                    </div>
+                    <div class="time-box">
+                        <div class="time-number" id="minutes">00</div>
+                        <div class="time-label">Min</div>
+                    </div>
+                    <div class="time-box">
+                        <div class="time-number" id="seconds">00</div>
+                        <div class="time-label">Seg</div>
+                    </div>
+                </div>
             </div>
 
             <div class="scroll-arrow-container">
@@ -374,17 +410,17 @@
         </section>
 
         <section class="section message reveal">
-            <h2>Cada momento es un regalo</h2>
+            <h2>Un momento inolvidable</h2>
             <p>
-                Hoy, con el corazón lleno de ilusiones y la alegría de mis 15 años, quiero invitarte a compartir una velada que será pura magia.<br><br>
-                Prepárate para una noche inolvidable, donde el mar y las estrellas serán testigos de un sueño hecho realidad. Te espero para celebrar juntos.
+                Hay días que soñamos desde que tenemos memoria, y compartirlos con las personas que dan luz a nuestra vida los convierte en recuerdos eternos.<br><br>
+                Acompáñame a celebrar la magia de mis 15 años en una velada llena de amor, risas y buena música bajo las estrellas.
             </p>
         </section>
 
         <section class="section location reveal">
-            <h2>La Magia Está Cerca</h2>
+            <h2>¿Dónde nos vemos?</h2>
             <div class="location-info">
-                <p><strong>Lugar:</strong> Villa mar, Ancón, 1ra C. Sullana</p>
+                <p><strong>Lugar:</strong> Villa mar, Ancón, 1ra C. Sullana<br><strong>Fecha y Hora:</strong> Sábado 21 de Marzo de 2026, 2:00 pm</p>
             </div>
             
             <div class="map-wrapper">
@@ -393,24 +429,32 @@
         </section>
 
         <section class="asistencia-section reveal">
+            <svg class="crab-watermark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#d2e3ee">
+                <path d="M228.1 113.8l-13.5-35.3c-4.4-11.6-17.5-17.4-29.1-13.1-11.6 4.4-17.4 17.5-13.1 29.1l13.5 35.3c-23.7 13.9-42.5 35-52.6 61.1L82.1 161.4c-9.5-8.4-23.9-7.5-32.3 2-8.4 9.5-7.5 23.9 2 32.3l49.8 44.1c-1.3 6.9-2.1 14.1-2.1 21.4 0 31.6 12 60.3 31.6 82L105 391.8c-8.8 9.1-8.5 23.6 .6 32.4 9.1 8.8 23.6 8.5 32.4-.6l27.1-28.1c25 18.5 56.4 29.5 90.9 29.5s65.9-11 90.9-29.5l27.1 28.1c4.5 4.6 10.4 6.9 16.4 6.9 5.8 0 11.6-2.2 16.1-6.4 9.1-8.8 9.4-23.3 .6-32.4l-26.1-48.6c19.6-21.7 31.6-50.4 31.6-82 0-7.3-.8-14.5-2.1-21.4l49.8-44.1c9.5-8.4 10.4-22.8 2-32.3-8.4-9.5-22.8-10.4-32.3-2l-51.2 29.5c-10.1-26.1-28.9-47.2-52.6-61.1l13.5-35.3c4.4-11.6-1.5-24.8-13.1-29.1-11.6-4.4-24.8 1.5-29.1 13.1l-13.5 35.3C275.5 109.9 266 108 256 108s-19.5 1.9-27.9 5.8zM176 272c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm160 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/>
+            </svg>
+
             <h2 class="asistencia-titulo">Confirmación</h2>
             <p>Por favor, confirma tu presencia. Tu compañía es el mejor regalo.</p>
             
             <div class="confirm-btn-group">
                 <a href="#" class="confirm-btn confirm-btn-yes">¡Allí estaré!</a>
-                <a href="#" class="confirm-btn confirm-btn-no">No podré asistir</a>
+                <a href="#" class="confirm-btn confirm-btn-no">Declinar con pesar</a>
             </div>
         </section>
     </div>
 
     <div id="music-toggle" onclick="toggleMusic()">
-        <svg id="icon-unmuted" class="music-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M9 18c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3v-7l8-2v9c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3v-11l-11 2v11z"/>
+        
+        <svg id="icon-unmuted" class="music-note-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M21 3H10a1 1 0 0 0-1 1v10.55A3.95 3.95 0 0 0 7 14c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4V7h8v8.55A3.95 3.95 0 0 0 17 15c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4V4a1 1 0 0 0-1-1z"/>
         </svg>
-        <svg id="icon-muted" class="music-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <rect x="6" y="4" width="4" height="16" rx="1"/>
-            <rect x="14" y="4" width="4" height="16" rx="1"/>
+
+        <svg id="icon-muted" class="pause-box-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="4" fill="#5a8dee"/>
+            <rect width="3" height="10" x="8" y="7" rx="1" fill="#ffffff"/>
+            <rect width="3" height="10" x="13" y="7" rx="1" fill="#ffffff"/>
         </svg>
+
     </div>
 
     <script>
@@ -419,7 +463,6 @@
         let isPlaying = false;
         const musicToggle = document.getElementById("music-toggle");
 
-        // FUNCIÓN PARA ENTRAR
         function enterExperience() {
             music.play();
             isPlaying = true;
@@ -432,10 +475,9 @@
                 musicToggle.style.display = 'flex';
                 updateCountdown();
                 reveal();
-            }, 1500);
+            }, 1000);
         }
 
-        // Función control de música
         function toggleMusic() {
             const iconUnmuted = document.getElementById("icon-unmuted");
             const iconMuted = document.getElementById("icon-muted");
@@ -452,19 +494,17 @@
             isPlaying = !isPlaying;
         }
 
-        // LÓGICA DE LA CUENTA REGRESIVA
-        // Fecha del evento: 21 de Marzo de 2026
+        // FECHA EXACTA: 21 de Marzo de 2026, 2:00 PM
         const eventDate = new Date("March 21, 2026 14:00:00").getTime();
 
         function updateCountdown() {
-            const countdownEl = document.querySelector('.countdown');
             const timer = setInterval(() => {
                 const now = new Date().getTime();
                 const distance = eventDate - now;
 
                 if (distance < 0) {
                     clearInterval(timer);
-                    countdownEl.innerText = "¡El gran día ha llegado!";
+                    document.querySelector('.countdown-wrapper').style.display = 'none';
                     return;
                 }
 
@@ -473,11 +513,14 @@
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                countdownEl.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                // Agregar ceros a la izquierda para que siempre se vean 2 números (ej: 08)
+                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
             }, 1000);
         }
 
-        // Efecto reveal al bajar
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -493,6 +536,7 @@
     </script>
 </body>
 </html>
+
 
 
 
